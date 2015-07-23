@@ -1,0 +1,12 @@
+<?php
+
+class Ctr_[nomTable] extends Controleur {
+
+    public function __construct($a) {
+	//isAuth();
+        parent::__construct("[nomTable]", $a);
+    }
+
+}
+
+?>
