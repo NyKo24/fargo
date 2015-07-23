@@ -6,6 +6,6 @@ define("MAIL_USER", null);
 define("MAIL_PASSWORD", null);
 define("MAIL_PORT", 1025);
 define("MAIL_CRYPTAGE", null); // SSL or TLS
-define("MAIL_ADRESSE", "contact@nicolasbordes.com");
+define("MAIL_ADRESSE", null);
 define("ENVOI_MAIL_OK",true);
 ?>

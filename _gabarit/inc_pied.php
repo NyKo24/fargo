@@ -2,7 +2,7 @@
 	<div class="col-md-8 col-md-offset-2">
 		<hr />
 		<p class="text-center">
-			Créé par Giles Lévy (et les stagiaire Developpeur D'application du centre Guinot à Villejuif), boosté par <a href="http://www.twitter.com/NyKo24">Nicolas Bordes</a>
+			Créé par Giles Lévy (et les stagiaires Developpeur D'application du centre Guinot à Villejuif - 94800 - FRANCE), boosté par <a href="http://www.twitter.com/NyKo24">Nicolas Bordes</a>
 		</p>
 		<hr />
 		<p class="text-center">
