@@ -1,9 +1,19 @@
 <?php
+/**
+ * Point d'entrée de l'application
+ * 
+ * Toutes les requêtes HTTP arrivent sur cette page
+ * la réécriture d'URL est la suivante : BASE_URL/controleur/action/param1/valeur1/param2/valeur2.../paramn/valeurn
+ * @author Nicolas BORDES <nicolasbordes@me.com>
+ */
 
-$t1=microtime();
 require "inc_config.php";
+require "inc_constante.php";
 
 spl_autoload_register("monAutoload");
+//appel de l'autoloader de Composer
+require BASE_REP.'vendor/autoload.php';
+
 //Recupération de l'URL
 if (isset($_GET['url']))
 	$data = explode("/", $_GET['url']);
@@ -22,42 +32,25 @@ for ($i = 2; $i < count($data); $i+=2) {
 
 autoconnect();
 $ctr="Ctr_" . $controleur;
-$oCtr=new $ctr($action);
 
-$t2=microtime();
-$tempsExec=$t2-$t1;
-//historique des connexions
-if ($controleur!="admin"){
-	$objConnexion = new Connexion();
-	$objConnexion->initData();
-	if (isset($_SESSION["uti_id"]))
-		$idUser=$_SESSION["uti_id"];
-	else
-		$idUser=null;
-	$objConnexion->data["con_page"]=isset($_GET["url"]) ? $_GET["url"] : "index";
-	$objConnexion->data["con_ip"]=isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : null;
-	$objConnexion->data["con_sessionID"]=isset($_COOKIE["PHPSESSID"]) ? $_COOKIE["PHPSESSID"] : null;
-	$objConnexion->data["con_iduser"]=isset($_SESSION["uti_id"]) ? $_SESSION["uti_id"] : null;
-	$objConnexion->data["con_tempsexecution"]=microtime(true)-$_SERVER["REQUEST_TIME_FLOAT"];
-	$objConnexion->data["con_date"]=date("Y-m-d H:i:s");
-	$objConnexion->data["con_provenance"]=isset($_SERVER["HTTP_REFERER"]) ? $_SERVER["HTTP_REFERER"] : null;
-	$objConnexion->sauver();
+//vérification que le Controller existe
+if (!class_exists($ctr,true))
+{
+	header("location: ".BASE_URL."/404/index.php" );
+}
+//vérification que la méthode du Controller existe
+else if (!method_exists($ctr, $action))
+{
+	header("location: ".BASE_URL."/404/index.php" );
 }
 
+$oCtr=new $ctr($action);
 
- echo "<pre>";
- print_r($_SESSION);
- echo "</pre>";
 
-// echo "<pre>";
-/// print_r($_POST);
-// echo "</pre>";
+// Controleur::debug($_SESSION);
+// Controleur::debug($_GET);
+// Controleur::debug($_POST);
+// Controleur::debug($_SERVER);
+// Controleur::debug($_COOKIE);
 
-echo "<pre>";
-print_r($_SERVER);
-echo "</pre>";
-
-//  echo "<pre>";
-//  print_r($_COOKIE);
-//  echo "</pre>";
 ?>

@@ -1,11 +1,30 @@
+<?php 
+/**
+ * Fichier gabarit par défaut
+ * 
+ * @author Nicolas BORDES <nicolasbordes.com>
+ * 
+ * @version 1.0
+ */
+?>
 <!DOCTYPE>
 <html>
     <head>
         <? require BASE_REP . "_gabarit/inc_head.php"; ?>
     </head>
-    <?if (isset($_MYFILE))
+    <?
+    /** $_MYFILE est une variable superglobale pouvant être défini 
+     * dans les controleurs pour charger des fichiers CSS / JS
+     * spécifique à une page, cela évite de charger des fichiers JS / CSS inutilement
+     */
+    if (isset($_MYFILE))
     	foreach ($_MYFILE as $valeur)
     		echo $valeur;
+    	
+    	/** $_MYPLUGIN est une variable superglobale pouvant être défini
+    	 * dans les controleurs pour charger des fichiers PHP
+    	 * spécifique à une page, cela évite de charger ces fichiers sur chaque page
+    	 */
     if (isset($_MYPLUGIN))
     	foreach ($_MYPLUGIN as $valeur)
     		require $valeur 

@@ -1,7 +1,10 @@
 <?php
-/*
+/**
 * Configuration de l'installation de FARGO 
-* V.1.6.2
+* 
+* @author Nicolas BORDES <nicolasbordes@me.com>
+* 
+* @version 1.6.2
 *
 * ATTENTION : Les chemin de fichier doivent être avec "/" (slash) et non pas des "\" (anti-slash)
 *
@@ -10,64 +13,91 @@
 
 // 1. Apache 
 
-// Chemin absolu du fichier httpd.con
-$cheminHTTP="C:/wamp/bin/apache/apache2.2.22/conf/httpd.conf";
+/**
+ * @var string $cheminHTTP chemin du fichier httpd.com d'Apache
+ */
+$cheminHTTP="C:/wamp/bin/apache/apache2.4.4/conf/httpd.conf";
 
-//Nom du vhost (serverName)
-$serveurName="lesuperboncoup";
 
-/*
+/**
+ * @var string $serveurName Nom du virtual host (serverName)
+ */
+$serveurName="fargo";
+
+/**
 * IP du VHOST : 
 * 127.0.0.1 pour un usage en local
 * IP Publique : accèsible depuis l'exterieur sur le reseau
+* @var string $serveurIP IP du serveur
 */
 $serveurIP="127.0.0.1";
 
-//Repertoir ou ce situe le projet (DocumentRoot) 
-// ATTENTION : ajouter un "/" à la fin
-$chemin="D:/workspacePHP/lesuperboncoup/";
+/**
+ * @var string $chemin Chemin du projet (DocumentRoot) ATTENTION : ajouter un "/" à la fin
+ */
+$chemin="D:/workspacePHP/fargo/";
+
+/**
+ * @var string $documentRoot $chemin + "www" (correspond au point d'entrée de l'application
+ */
 $documentRoot=$chemin."www";
+
+/**
+ * @var string $includePath $chemin + "_include" ajout ce chemin à l'include path du projet
+ */
 $includePath=$chemin."_include";
 
 // 2. MySQL
 
-//addresse du serveur MySQL
+/**
+ * @var string $serveurBDD adresse du serveur MySQL
+ */
 $serveurBDD="localhost";
 
-//login MySQL
+/**
+ * @var string $userBDD nom d'utilisateur de connexion à la BDD
+ */
 $userBDD="root";
 
-//Mot de passe MySQL
+/**
+ * @var string $passBDD mot de passe de l'utilisateur de connexion à la BDD
+ */
 $passBDD="";
 
-//Nom de la base MySQL
-$nameBDD="lesuperboncoup";
+/**
+ * @var string $nameBDD nom de la base de donnée
+ */
+$nameBDD="fargo_test";
 
 // 3. Configuration du site
 
-//Titre du site (const TITRE_SITE)
-$siteName="Le Super Bon Coup alpha";
+/**
+ * @var string $siteName Defini la valeur de la constante TITRE_SITE reprensant le nom du site
+ */
+$siteName="Fargo TEST";
 
-//URL du site
-// ATTENTION ajouter un "/" a la fin
-// * Correspond au serverName *
-$url="http://lesuperboncoup/";
+/**
+ * @var string $url : URL du site (ATTENTION ajouter un "/" a la fin) * Correspond au serverName *
+ */
+$url="http://fargo/";
 
-/*
-* Clé de cryptage des mots de passe
-* Si laisser vide alors génération d'une clé avec unicid()
-*/
+/**
+ * @var string $cleCryptage Clé de cryptage des mots de passe (Si laisser vide alors génération d'une clé avec unicid())
+ */
 $cleCryptage="";
 
-//Activer les sessions ?
-// defaut NON
+
+/**
+ * @var boolean $session Activer / désactiver les session
+ */
 $session=true;
 
-//profil admin
-// ID correspondant au profil admin
+/**
+ * @var int $admin identifiant correspondant au profil ADMIN 
+ */
 $admin=3;
 
-/*
+/**
 * La configuration est fini
 * exécuter le fichier en ligne de commande ou bien via le web
 * ENJOY ! 

@@ -1,0 +1,22 @@
+{
+  "name": "fargo",
+  "version": "1.7.0",
+  "description": "Fast and easy framework to learn PHP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NyKo24/fargo.git"
+  },
+  "author": "Nicolas BORDES <nicolasbordes@me.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NyKo24/fargo/issues"
+  },
+  "homepage": "https://github.com/NyKo24/fargo#readme",
+  "dependencies": {
+    "dploy": "^1.2.0"
+  }
+}

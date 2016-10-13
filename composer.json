@@ -1,0 +1,19 @@
+{
+    "name": "NyKo24/Fargo",
+    "description": "Easy & fast framework to learn PHP",
+    "require": {
+        "fzaninotto/faker": "^1.5",
+        "phpmailer/phpmailer": "^5.2",
+        "league/flysystem": "^1.0",
+        "plasticbrain/php-flash-messages": "^1.0"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "^1.5"
+    },
+    "authors": [
+        {
+            "name": "Nicolas BORDES",
+            "email": "nicolasbordes@me.com"
+        }
+    ]
+}

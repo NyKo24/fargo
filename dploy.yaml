@@ -1,0 +1,32 @@
+dev:
+    scheme: sftp
+    host: 127.0.0.1
+    port: 22
+    user: login
+    pass: password
+    check: true
+    path:
+        remote: /folder/to/project
+    slots: 10
+
+test:
+    scheme: sftp
+    host: 127.0.0.1
+    port: 22
+    user: login
+    pass: password
+    check: true
+    path:
+        remote: /folder/to/project
+    slots: 10
+
+prod:
+    scheme: sftp
+    host: 127.0.0.1
+    port: 22
+    user: login
+    pass: password
+    check: true
+    path:
+        remote: /folder/to/project
+    slots: 10

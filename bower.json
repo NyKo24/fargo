@@ -1,0 +1,15 @@
+{
+  "name": "fargo",
+  "authors": [
+    "NyKo24 <nicolasbordes@me.com>"
+  ],
+  "description": "Easy and fast framework to learn PHP",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7"
+  }
+}
